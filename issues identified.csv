@@ -1,0 +1,22 @@
+ISSUE,DATA,ISSUE TYPE
+"Some column are not need so they should dropped (in_reply_to_status_id, in_reply_to_user_id, retweeted_status_id, retweeted_status_user_id, retweeted_status_timestamp)",twee_archive,Tidiness
+Timestamp is in int64 format and needs to be convert timestamp to datetime format for easy manipulation,twee_archive,Quality
+tweet_id is currently in int64 format and will be converted to string since it is actually not a quantitative value,twee_archive,Quality
+Unrealitic rating values are in the rating numerator and denominator and should be removed. This will be removed using outlier analysis.,twee_archive,Quality
+Rating numerator and denominator need to be in float format rather than int64,twee_archive,Quality
+Create a rating column,twee_archive,Quality
+Convert source to readable format by extract by extract tweet source from the source link provided,twee_archive,Quality
+,,
+"Remove rows where p1_dog,p2_dog,p3_dog are false because they are most likely not dogs",image_pred,Tidness
+"Drop p1_dog,p2_dog,p3_dog columns since we have selected rows which are most likely dogs. Also drop img_num as it is not relevant",image_pred,Tidiness
+"Rename 'p1', 'p1_conf', 'p2', 'p2_conf', 'p3', 'p3_conf' to more descriptive names",image_pred,Quality
+Remove '_' from names and capitalize the first letter of each names.,image_pred,Quality
+tweet_id is currently in int64 format and will be converted to string since it is actually not a quantitative value,image_pred,Quality
+,,
+Timestamp is in int64 format and needs to be convert timestamp to datetime format for easy manipulation,tweet_data,Quality
+tweet_id is currently in int64 format and will be converted to string since it is actually not a quantitative value,tweet_data,Quality
+The User_id is same value all through and should be dropped as it is irrelevant for analysis.,tweet_data,Tidness
+,,
+Merge the three dataset into a single dataframe (tweet_data_master). Merging was done on tweet_id and timestamp.,tweet_data_master,Tidness
+Capitalize column names in the merged dataset,tweet_data_master,Quality
+"Extract day, month and year from timestamp in the merged dataset ",tweet_data_master,Tidness
